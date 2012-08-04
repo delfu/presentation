@@ -1,3 +1,7 @@
+body{
+	overflow:hidden;
+}
+
 #slides_summaries{
 	display:block;
 	width:70%;
@@ -8,7 +12,12 @@
 }
 .summary{
 	margin:auto;
+	padding:20px;
 	display:none;
+	background-color: white;
+	position:relative;
+	left:0px;
+	top:0px;
 }
 
 #controls{
@@ -23,8 +32,7 @@
 	width:15%;
 	height:100%;
 	position: absolute;
-	background-color:black;
-	opacity:0.6;
+	background-color:#555555;
 	display:block;
 }
 .next{

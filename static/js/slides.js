@@ -1,12 +1,23 @@
 (function($){
+
+	var slides = [];
 	$.fn.slides = function(){
 		console.log("slides created");
+		$(this).children().each(function(){
+			slides.push(this);
+		});
 	};
-	$.fn.animate = function(direction){
-		console.log("direction " + direction);
-	};
-	$.fn.goto = function(slide_num){
-		console.long("jumping to " + slide_num);
+	// $.fn.animate = function(direction){
+	// 	console.log("direction " + direction);
+	// };
+	$.fn.goto = function(old_slide, new_slide){
+		console.log("jumping to " + new_slide);
+		$(slides[new_slide]).css("left", '100%');
+		$(slides[new_slide]).show();
+		$(slides[new_slide]).animate({"left":"-=100%"}, "slow");
+		if (old_slide != new_slide){
+			$(slides[old_slide]).hide();
+		}
 	};
 
 })(jQuery);
