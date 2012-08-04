@@ -1,8 +1,10 @@
 {
     "slide1":{
-    	"summary":"This is a brief descript of the first slide"
+    	"summary":"<ul><li>element1</li><li>element2</li></ul>",
+    	"slide":"slide data for first slide"
     },
     "slide2":{
-    	"summary":"THIS IS S...LIDE2!!!!"
+    	"summary":"THIS IS S...LIDE2!!!!",
+    	"slide":"slide data for second slide"
     }
 }
