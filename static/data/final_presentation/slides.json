@@ -1,0 +1,24 @@
+{
+    "slide1":{
+    	"summary":"<ul><li>element1</li><li>element2</li></ul>",
+    	"slide":"slide data for first slide"
+    },
+    "slide2":{
+    	"summary":"THIS IS S...LIDE2!!!!",
+    	"slide":"slide data for second slide"
+    },
+    "slide3":{
+    	"summary":"",
+    	"slide":"<img src='data/final_presentation/img/usage_graph.png'/>"
+    },
+    "slide4":{
+    	"summary":"",
+    	"slide":"<img src='data/final_presentation/img/usage_pi.png'/>"
+    },
+    "slide5":{
+    	"summary":"",
+    	"slide":"<img src='data/final_presentation/img/allocation.png'/>"
+    }
+
+
+}

@@ -41,7 +41,7 @@ $(function() {
     var curr_slide = 0;
     var num_slides = 0; 
 
-    $.getJSON("data/slides.json", function(json) {
+    $.getJSON("data/final_presentation/slides.json", function(json) {
         $.each(json, function(){
             $slides_summaries.append("<div class='summary'>" + this.summary + "</div>");
             $slides_container.append("<div class='slide'>" + this.slide + "</div>");

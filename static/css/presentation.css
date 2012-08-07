@@ -21,26 +21,29 @@ body{
 }
 #slides_container{
 	display:block;
-	width:70%;
-	height:100%;
+	
 	position:absolute;
-	left:15%;
+	top:5%;
+	bottom:5%;
+	left:10%;
+	right:10%;
+
 	margin:auto;
 	overflow:hidden;
 }
 .slide{
-	margin:5%;
-	padding:5%;
+	padding:3%;
 
 	display:none;
+	overflow: hidden;
 	background-color: white;
-	height:70%;
-	width: 80%;
 	border-radius: 15px;
 
-	position:relative;
-	left:0px;
-	top:0px;
+	position:absolute;
+	top:0%;
+	bottom:0%;
+	left:0%;
+	right:0%;
 
 	-moz-box-shadow:    3px 3px 5px 0px #666666;
   	-webkit-box-shadow: 3px 3px 5px 0px #666666;
