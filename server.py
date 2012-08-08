@@ -4,7 +4,8 @@ from socketio import socketio_manage
 from socketio.server import SocketIOServer
 from socketio.namespace import BaseNamespace
 
-STATIC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'static'))
+import util
+from util import route
 
 
 class ControlNamespace(BaseNamespace):
@@ -29,27 +30,22 @@ class ControlNamespace(BaseNamespace):
         for s in self._registry.values():
             s.emit(event, message)
 
+@util.expose
+def presentation(start_response, args):
+    id = args[0]
+    return "<html><body>presentation %s</body></html>" % id
+
+
+
 
 def application(environ, start_response):
-    if environ['PATH_INFO'].startswith('/socket.io'):
+    args = util.get_args(environ)
+    if route(environ, 'socket.io'):
         return socketio_manage(environ, { '/control': ControlNamespace })
+    elif route(environ, 'presentation'):
+        return presentation(start_response, args)
     else:
-        return serve_file(environ, start_response)
-
-def serve_file(environ, start_response):
-    path = os.path.normpath(
-        os.path.join(STATIC_DIR, environ['PATH_INFO'].lstrip('/')))
-    assert path.startswith(STATIC_DIR), path
-    if os.path.exists(path):
-        start_response('200 OK', [('Content-Type', 'text/html')])
-        with open(path) as fp:
-            while True:
-                chunk = fp.read(4096)
-                if not chunk: break
-                yield chunk
-    else:
-        start_response('404 NOT FOUND', [])
-        yield 'File not found'
+        return util.serve_file(environ, start_response)
 
 
 sio_server = SocketIOServer(
