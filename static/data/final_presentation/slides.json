@@ -9,15 +9,15 @@
     },
     "slide3":{
     	"summary":"",
-    	"slide":"<img src='data/final_presentation/img/usage_graph.png'/>"
+    	"slide":"<img src='/data/final_presentation/img/usage_graph.png'/>"
     },
     "slide4":{
     	"summary":"",
-    	"slide":"<img src='data/final_presentation/img/usage_pi.png'/>"
+    	"slide":"<img src='/data/final_presentation/img/usage_pi.png'/>"
     },
     "slide5":{
     	"summary":"",
-    	"slide":"<img src='data/final_presentation/img/allocation.png'/>"
+    	"slide":"<img src='/data/final_presentation/img/allocation.png'/>"
     }
 
 
