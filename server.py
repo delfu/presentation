@@ -42,8 +42,6 @@ def application(environ, start_response):
     args = util.get_args(environ)
     if route(environ, 'socket.io'):
         return socketio_manage(environ, { '/control': ControlNamespace })
-    elif route(environ, 'presentation'):
-        return presentation(start_response, args)
     else:
         return util.serve_file(environ, start_response)
 
