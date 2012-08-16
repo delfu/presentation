@@ -4,8 +4,12 @@ from socketio import socketio_manage
 from socketio.server import SocketIOServer
 from socketio.namespace import BaseNamespace
 
+from mako.template import Template
+from mako.lookup import TemplateLookup
+
 import util
 from util import route
+from util import STATIC_DIR
 
 
 class ControlNamespace(BaseNamespace):
@@ -33,15 +37,30 @@ class ControlNamespace(BaseNamespace):
 @util.expose
 def presentation(start_response, args):
     id = args[0]
-    return "<html><body>presentation %s</body></html>" % id
+    #TODO: fetch data from database
+    template = template_lookup.get_template("presentation.mako") 
+    return template.render(json_path="/data/final_presentation/slides.json")
+
+@util.expose
+def controls(start_response, args):
+    id = args[0]
+    #TODO: fetch data from database
+    print "hit here"
+    template = template_lookup.get_template("controls.mako") 
+    return template.render(json_path="/data/final_presentation/slides.json")
 
 
+template_lookup = TemplateLookup(directories=[STATIC_DIR + "/templates"])
 
 
 def application(environ, start_response):
     args = util.get_args(environ)
     if route(environ, 'socket.io'):
         return socketio_manage(environ, { '/control': ControlNamespace })
+    elif route(environ, 'presentation'):
+        return presentation(start_response, args)
+    elif route(environ, 'controls'):
+        return controls(start_response, args)
     else:
         return util.serve_file(environ, start_response)
 

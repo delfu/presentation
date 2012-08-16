@@ -39,19 +39,6 @@ $(function() {
     var $page = $("#page");
 
     var curr_slide = 0;
-    var num_slides = 0; 
-
-    $.getJSON("data/final_presentation/slides.json", function(json) {
-        $.each(json, function(){
-            $slides_summaries.append("<div class='summary'>" + this.summary + "</div>");
-            $slides_container.append("<div class='slide'>" + this.slide + "</div>");
-            num_slides += 1;
-        });
-        if ($slides_summaries.length > 0)
-            $slides_summaries.slides();
-        if ($slides_container.length > 0)
-            $slides_container.slides();
-    });
 
     // Binding the controls
     $prev.bind('click', function() {
