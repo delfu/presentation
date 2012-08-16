@@ -1,6 +1,39 @@
 $(function(){
 
-	var slides = [];
+	var $slides_summaries = $("#slides_summaries");
+    var $slides_container = $("#slides_container");
+
+    //global variable
+	slides = [];
+	num_slides = 0; 
+
+    $.getJSON(json_path, function(json) {
+        $.each(json, function(key, value){
+            $slides_summaries.append(parse_markdown(this.summary, 
+                                        {
+                                            dir: "/data/final_presentation/",
+                                            type: "summary",
+                                            id: key
+                                        })
+                                    );
+            $slides_container.append(parse_markdown(this.slide, 
+                                        {
+                                            dir: "/data/final_presentation/",
+                                            type: "slide",
+                                            id: key
+                                        })
+                                    );
+            num_slides += 1;
+        });
+        if ($slides_summaries.length > 0)
+            $slides_summaries.slides();
+        if ($slides_container.length > 0)
+            $slides_container.slides();
+    });
+
+	
+
+
 	$.fn.slides = function(){
 		console.log("slides created");
 		$(this).children().each(function(){
