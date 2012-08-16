@@ -3,6 +3,7 @@ $(function(){
 	var $slides_summaries = $("#slides_summaries");
     var $slides_container = $("#slides_container");
 
+
     //global variable
 	slides = [];
 	num_slides = 0; 
@@ -23,6 +24,7 @@ $(function(){
                                             id: key
                                         })
                                     );
+
             num_slides += 1;
         });
         if ($slides_summaries.length > 0)
@@ -32,7 +34,9 @@ $(function(){
     });
 
 	
-
+    $.fn.last = function(){
+        return $(this[ this.length - 1 ]);
+    }
 
 	$.fn.slides = function(){
 		console.log("slides created");
@@ -50,12 +54,13 @@ $(function(){
 			$(slides[new_slide]).css("left", '100%');
 		// else
 		// 	$(slides[new_slide]).css("right", '100%');
+
 		$(slides[new_slide]).show();
+        
 		// if (new_slide >= old_slide)
 			$(slides[new_slide]).animate({"left":"-=100%"}, "slow");
 		// else
 		// 	$(slides[new_slide]).animate({"right":"-=100%"}, "slow");
-
 
 		if (old_slide != new_slide){
 			$(slides[old_slide]).hide();

@@ -1,6 +1,6 @@
 function parse_markdown(markdown, options){
-    var start_tag = /^\[((list|title|img))\]/;
-    var end_tag = /^\[\/((list|title|img))\]/;
+    var start_tag = /^\[((list|title|img|left|right))\]/;
+    var end_tag = /^\[\/((list|title|img|left|right))\]/;
 
     var result = "";
     var project_dir = options.dir ? options.dir : "/";
@@ -20,11 +20,23 @@ function parse_markdown(markdown, options){
         else if (tag_name == "img"){
             result += "<img src='" + project_dir;
         }
+        else if (tag_name == "left"){
+            result += "<div style='position:absolute;left:3%;right:50%;top:3%;bottom:3%;'>";
+        }
+        else if (tag_name == "right"){
+            result += "<div style='position:absolute;left:50%;right:3%;top:3%;bottom:3%;'>";
+        }
     }
 
     function parse_end_tag(tag, tag_name){
         if (tag_name == "list"){
             result += "</li></ul>";
+        }
+        else if (tag_name == "img"){
+            result += "'/>";
+        }
+        else if (tag_name == "left" || tag_name == "right"){
+            result += "</div>";
         }
         stack.pop();
     }
@@ -63,9 +75,6 @@ function parse_markdown(markdown, options){
             if (stack.last() == "list"){
                 var elements = text.split(";");
                 text = elements.join("</li><li>");
-            }
-            else if (stack.last() == "img"){
-                text += "'/>";
             }
             result += text;
         }

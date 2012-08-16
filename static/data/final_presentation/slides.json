@@ -5,11 +5,11 @@
     },
     "1_0_qos":{
     	"summary":"THIS IS S...LIDE2!!!!",
-    	"slide":"<div class='center'>Quality of Service Portal</div>"
+    	"slide":"[title]Quality of Service Portal[/title]"
     },
     "1_1_usage":{
     	"summary":"",
-    	"slide":"[img]img/usage_graph.png[/img]"
+    	"slide":"[right][img]img/usage_graph.png[/img][/right]"
     },
     "1_2_usage_pi":{
     	"summary":"",
