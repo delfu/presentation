@@ -1,23 +1,35 @@
 {
-    "slide1":{
-    	"summary":"<ul><li>element1</li><li>element2</li></ul>",
-    	"slide":"slide data for first slide"
+    "0_intro":{
+    	"summary":"[list]presentation;several projects, only going to mention a couple[/list]",
+    	"slide":"[list]presentation;several projects, only going to mention a couple[/list]"
     },
-    "slide2":{
+    "1_0_qos":{
     	"summary":"THIS IS S...LIDE2!!!!",
-    	"slide":"slide data for second slide"
+    	"slide":"<div class='center'>Quality of Service Portal</div>"
     },
-    "slide3":{
+    "1_1_usage":{
     	"summary":"",
-    	"slide":"<img src='/data/final_presentation/img/usage_graph.png'/>"
+    	"slide":"[img]img/usage_graph.png[/img]"
     },
-    "slide4":{
+    "1_2_usage_pi":{
     	"summary":"",
-    	"slide":"<img src='/data/final_presentation/img/usage_pi.png'/>"
+    	"slide":"[img]img/usage_pi.png[/img]"
     },
-    "slide5":{
+    "1_3_allocation":{
     	"summary":"",
-    	"slide":"<img src='/data/final_presentation/img/allocation.png'/>"
+    	"slide":"[img]img/allocation.png[/img]"
+    },
+    "slide6":{
+    	"summary":"",
+    	"slide":"[img]img/allocation.png[/img]"
+    },
+    "slide7":{
+    	"summary":"",
+    	"slide":"[img]img/allocation.png[/img]"
+    },
+    "slide8":{
+    	"summary":"",
+    	"slide":"[img]img/allocation.png[/img]"
     }
 
 

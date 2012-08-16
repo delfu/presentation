@@ -42,9 +42,21 @@ $(function() {
     var num_slides = 0; 
 
     $.getJSON(json_path, function(json) {
-        $.each(json, function(){
-            $slides_summaries.append("<div class='summary'>" + this.summary + "</div>");
-            $slides_container.append("<div class='slide'>" + this.slide + "</div>");
+        $.each(json, function(key, value){
+            $slides_summaries.append(parse_markdown(this.summary, 
+                                        {
+                                            dir: "/data/final_presentation/",
+                                            type: "summary",
+                                            id: key
+                                        })
+                                    );
+            $slides_container.append(parse_markdown(this.slide, 
+                                        {
+                                            dir: "/data/final_presentation/",
+                                            type: "slide",
+                                            id: key
+                                        })
+                                    );
             num_slides += 1;
         });
         if ($slides_summaries.length > 0)

@@ -5,6 +5,7 @@
 	<script language="javascript">
 		json_path = "${json_path}";
 	</script>
+	<script type="text/javascript" src="/js/markdown.js"></script>
 	<script type="text/javascript" src="/js/slides.js"></script>
 	<script type="text/javascript" src="/js/controls.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/controls.css"/>
