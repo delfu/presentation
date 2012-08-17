@@ -42,11 +42,11 @@ def presentation(start_response, args):
     return template.render(json_path="/data/final_presentation/slides.json")
 
 @util.expose
-def controls(start_response, args):
+def controller(start_response, args):
     id = args[0]
     #TODO: fetch data from database
     print "hit here"
-    template = template_lookup.get_template("controls.mako") 
+    template = template_lookup.get_template("controller.mako") 
     return template.render(json_path="/data/final_presentation/slides.json")
 
 
@@ -59,8 +59,8 @@ def application(environ, start_response):
         return socketio_manage(environ, { '/control': ControlNamespace })
     elif route(environ, 'presentation'):
         return presentation(start_response, args)
-    elif route(environ, 'controls'):
-        return controls(start_response, args)
+    elif route(environ, 'controller'):
+        return controller(start_response, args)
     else:
         return util.serve_file(environ, start_response)
 
