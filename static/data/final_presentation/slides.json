@@ -3,7 +3,11 @@
         "css":"/data/final_presentation/style.css"
     },
     "data":{
-        "0_intro":{
+        "0_cover":{
+            "summary":"",
+            "slide":"[middle][center][img]img/hulu.png[/img][/center][/middle][bottom][bottom][title]QoS Portal & Smooth Streaming[/title][bottom][center]De Long Fu[/center][/bottom][/bottom][/bottom]"
+        },
+        "0_1_table_of_content":{
         	"summary":"",
         	"slide":"[title]Overview[/title][middle][list]thing[list]presentation;several projects, only going to mention a couple[/list];level2[/list][/middle]"
         },
