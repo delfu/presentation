@@ -15,24 +15,23 @@ body{
 
 /* actual slides */
 body{
-	background-color: #555555;
-	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 30px;
+	background-color: black;
 }
 #slides_container{
 	display:block;
 	
 	position:absolute;
-	top:5%;
-	bottom:5%;
+	top:1%;
+	bottom:1%;
 	left:10%;
 	right:10%;
 
 	margin:auto;
 	overflow:hidden;
+
 }
 .slide{
-	padding:3%;
+	padding:3% 10%;
 
 	display:none;
 	overflow: hidden;
@@ -45,10 +44,23 @@ body{
 	left:0%;
 	right:0%;
 
-	-moz-box-shadow:    3px 3px 5px 0px #666666;
-  	-webkit-box-shadow: 3px 3px 5px 0px #666666;
-  	box-shadow:         3px 3px 5px 0px #666666;
+  	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 26px;
+	color: #797979;
 }
 
+.slide img{
+	max-width:100%; max-height:100%;
+}
 
+#page{
+	width: 60px;
+	height:60px;
+	position:absolute;
+	top:90%;
+	left:80%;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 26px;
+	color: #797979;
+}
 

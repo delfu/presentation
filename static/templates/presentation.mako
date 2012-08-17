@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width" />
 </head>
 <body>
-	<div id="slides_container">
-	</div>
+	<div id="slides_container"></div>
+	<div id="page"></div>
 </body>
 </html>

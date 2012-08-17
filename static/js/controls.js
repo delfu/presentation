@@ -27,6 +27,14 @@ function stopwatch() {
 
 
 $(function() {
+    function flip(direction){
+        if (direction == -1 && curr_slide > 0){
+            socket.emit('flip', curr_slide-1 );
+        }
+        else if (direction == 1 && curr_slide < num_slides - 1){
+            socket.emit('flip', curr_slide+1);
+        }
+    }
 
     // Create and connect sockert
     var socket = io.connect('/control');
@@ -42,13 +50,21 @@ $(function() {
 
     // Binding the controls
     $prev.bind('click', function() {
-        if (curr_slide > 0){
-            socket.emit('flip', -1);
-        }
+        flip(-1);
     });
     $next.bind('click', function() {
-        if (curr_slide < num_slides - 1){
-            socket.emit('flip', 1);
+        flip(1);
+    });
+    $(document).bind("keydown", function(e){
+        //left arrow key
+        if (e.keyCode === 37){
+            flip(-1);
+            return false;   
+        }
+        //right arrow key
+        else if (e.keyCode === 39){
+            flip(1);
+            return false;   
         }
     });
     $stopwatch.bind('click', function(){
@@ -60,7 +76,7 @@ $(function() {
     socket.on('flip', function(slide) {
         console.log(slide);
         if ($slides_summaries.length > 0)
-            $("#slides_summaries").goto(curr_slide, slide);
+            $("#slides_summaries").goto(curr_slide, slide, "slide");
         if ($slides_container.length > 0)
             $("#slides_container").goto(curr_slide, slide);
         curr_slide = slide;

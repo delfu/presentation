@@ -2,13 +2,21 @@ $(function(){
 
 	var $slides_summaries = $("#slides_summaries");
     var $slides_container = $("#slides_container");
+    var $body = $("body");
+
 
     //global variable
 	slides = [];
 	num_slides = 0; 
 
     $.getJSON(json_path, function(json) {
-        $.each(json, function(key, value){
+        console.log(json["options"]);
+        $.each(json["options"], function(key, value){
+            if (key == "css"){
+                $body.append('<link rel="stylesheet" type="text/css" href="' + json["options"]['css'] + '"/>');
+            }
+        });
+        $.each(json["data"], function(key, value){
             $slides_summaries.append(parse_markdown(this.summary, 
                                         {
                                             dir: "/data/final_presentation/",
@@ -23,6 +31,7 @@ $(function(){
                                             id: key
                                         })
                                     );
+
             num_slides += 1;
         });
         if ($slides_summaries.length > 0)
@@ -32,7 +41,9 @@ $(function(){
     });
 
 	
-
+    $.fn.last = function(){
+        return $(this[ this.length - 1 ]);
+    }
 
 	$.fn.slides = function(){
 		console.log("slides created");
@@ -40,26 +51,24 @@ $(function(){
 			slides.push(this);
 		});
 	};
-	// $.fn.animate = function(direction){
-	// 	console.log("direction " + direction);
-	// };
-	$.fn.goto = function(old_slide, new_slide){
-		console.log("jumping to " + new_slide);		
+	$.fn.goto = function(old_slide, new_slide, style){
+		console.log("jumping to " + new_slide);
+        style = typeof style !== 'undefined' ? style : "fadeIn";
 
-		// if (new_slide >= old_slide)
-			$(slides[new_slide]).css("left", '100%');
-		// else
-		// 	$(slides[new_slide]).css("right", '100%');
-		$(slides[new_slide]).show();
-		// if (new_slide >= old_slide)
-			$(slides[new_slide]).animate({"left":"-=100%"}, "slow");
-		// else
-		// 	$(slides[new_slide]).animate({"right":"-=100%"}, "slow");
-
-
-		if (old_slide != new_slide){
-			$(slides[old_slide]).hide();
-		}
+        if (style == "fadeIn"){
+            $(slides[new_slide]).fadeIn(1250)
+    		if (old_slide != new_slide){
+    			$(slides[old_slide]).hide();
+    		}
+        }
+        else{
+            $(slides[new_slide]).css("left", '100%');
+            $(slides[new_slide]).show();
+            $(slides[new_slide]).animate({"left":"-=100%"}, "slow");
+            if (old_slide != new_slide){
+                $(slides[old_slide]).hide();
+            }
+        }
 	};
 
 });

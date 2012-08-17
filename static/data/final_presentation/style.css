@@ -1,0 +1,19 @@
+h2 {
+    font-size: 45px;
+    line-height: 45px;
+    letter-spacing: -2px;
+    color: #555555;
+    font-weight: 600;
+    display: block;
+    padding:0;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    content: '·';
+    margin-left: -1em;
+    font-weight: 600;
+}

@@ -1,36 +1,41 @@
 {
-    "0_intro":{
-    	"summary":"[list]presentation;several projects, only going to mention a couple[/list]",
-    	"slide":"[list]presentation;several projects, only going to mention a couple[/list]"
+    "options":{
+        "css":"/data/final_presentation/style.css"
     },
-    "1_0_qos":{
-    	"summary":"THIS IS S...LIDE2!!!!",
-    	"slide":"<div class='center'>Quality of Service Portal</div>"
-    },
-    "1_1_usage":{
-    	"summary":"",
-    	"slide":"[img]img/usage_graph.png[/img]"
-    },
-    "1_2_usage_pi":{
-    	"summary":"",
-    	"slide":"[img]img/usage_pi.png[/img]"
-    },
-    "1_3_allocation":{
-    	"summary":"",
-    	"slide":"[img]img/allocation.png[/img]"
-    },
-    "slide6":{
-    	"summary":"",
-    	"slide":"[img]img/allocation.png[/img]"
-    },
-    "slide7":{
-    	"summary":"",
-    	"slide":"[img]img/allocation.png[/img]"
-    },
-    "slide8":{
-    	"summary":"",
-    	"slide":"[img]img/allocation.png[/img]"
+    "data":{
+        "0_intro":{
+        	"summary":"",
+        	"slide":"[title]Overview[/title][middle][list]thing[list]presentation;several projects, only going to mention a couple[/list];level2[/list][/middle]"
+        },
+        "1_0_qos":{
+        	"summary":"THIS IS S...LIDE2!!!!",
+        	"slide":"[middle][title]Quality of Service Portal[/title][/middle]"
+        },
+        "1_1_usage":{
+        	"summary":"",
+        	"slide":"[title]somethign[/title][center][img]img/usage_graph.png[/img][/center]"
+        },
+        "1_2_usage_pi":{
+        	"summary":"",
+        	"slide":"[top][left][img]img/usage_pi.png[/img][/left][/top]"
+        },
+        "1_3_allocation":{
+        	"summary":"",
+        	"slide":"[img]img/allocation.png[/img]"
+        },
+        "slide6":{
+        	"summary":"",
+        	"slide":"[img]img/allocation.png[/img]"
+        },
+        "slide7":{
+        	"summary":"",
+        	"slide":"[img]img/allocation.png[/img]"
+        },
+        "slide8":{
+        	"summary":"",
+        	"slide":"[img]img/allocation.png[/img]"
+        }
+
+
     }
-
-
 }
