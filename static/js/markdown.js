@@ -1,6 +1,6 @@
 function parse_markdown(markdown, options){
-    var start_tag = /^\[((list|title|img|left|right))\]/;
-    var end_tag = /^\[\/((list|title|img|left|right))\]/;
+    var start_tag = /^\[((list|title|img|left|right|top|bottom|center))\]/;
+    var end_tag = /^\[\/((list|title|img|left|right|top|bottom|center))\]/;
 
     var result = "";
     var project_dir = options.dir ? options.dir : "/";
@@ -26,6 +26,18 @@ function parse_markdown(markdown, options){
         else if (tag_name == "right"){
             result += "<div style='position:absolute;left:50%;right:3%;top:3%;bottom:3%;'>";
         }
+        else if (tag_name == "top"){
+            result += "<div style='position:absolute;left:3%;right:3%;top:3%;bottom:50%;'>";
+        }
+        else if (tag_name == "bottom"){
+            result += "<div style='position:absolute;left:3%;right:3%;top:50%;bottom:3%;'>";
+        }
+        else if (tag_name == "center" || tag_name == "title"){
+            result += "<div style='position:absolute;left:50%;'><div style='position:relative;left:-50%;'>";
+            if (tag_name == "title"){
+                result += "<h2>"
+            }
+        }
     }
 
     function parse_end_tag(tag, tag_name){
@@ -35,15 +47,23 @@ function parse_markdown(markdown, options){
         else if (tag_name == "img"){
             result += "'/>";
         }
-        else if (tag_name == "left" || tag_name == "right"){
+        else if (tag_name == "left" || tag_name == "right" || tag_name == "top" || tag_name == "bottom"){
             result += "</div>";
+        }
+        else if (tag_name == "center" || tag_name == "title"){
+            result += "</div></div>";
+            if (tag_name == "title"){
+                result += "</h2>"
+            }
         }
         stack.pop();
     }
 
 
     result = "<div class='" + type + " " + id + "'>"
+    var prev_markdown = "";
     while ( markdown ) {
+        prev_markdown = markdown;
         chars = true;
 
         // end tag
@@ -64,6 +84,10 @@ function parse_markdown(markdown, options){
                 match[0].replace(start_tag, parse_start_tag);
                 chars = false;
             }
+            else{ //prevent infinite loop
+                result += markdown[0];
+                markdown = markdown.substring(1);
+            }
         }
 
         if (chars) {
@@ -77,6 +101,9 @@ function parse_markdown(markdown, options){
                 text = elements.join("</li><li>");
             }
             result += text;
+        }
+        if (prev_markdown == markdown){
+            break;
         }
     }
     result += "</div>"

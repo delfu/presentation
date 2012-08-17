@@ -26,8 +26,8 @@ class ControlNamespace(BaseNamespace):
         super(ControlNamespace, self).disconnect(*args, **kwargs)
         
 
-    def on_flip(self, direction):
-        ControlNamespace._page_num += direction
+    def on_flip(self, new_slide):
+        ControlNamespace._page_num = new_slide
         self._broadcast("flip", ControlNamespace._page_num)
 
     def _broadcast(self, event, message):

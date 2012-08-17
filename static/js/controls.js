@@ -29,10 +29,10 @@ function stopwatch() {
 $(function() {
     function flip(direction){
         if (direction == -1 && curr_slide > 0){
-            socket.emit('flip', -1);
+            socket.emit('flip', curr_slide-1 );
         }
         else if (direction == 1 && curr_slide < num_slides - 1){
-            socket.emit('flip', 1);
+            socket.emit('flip', curr_slide+1);
         }
     }
 
