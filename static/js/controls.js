@@ -76,7 +76,7 @@ $(function() {
     socket.on('flip', function(slide) {
         console.log(slide);
         if ($slides_summaries.length > 0)
-            $("#slides_summaries").goto(curr_slide, slide);
+            $("#slides_summaries").goto(curr_slide, slide, "slide");
         if ($slides_container.length > 0)
             $("#slides_container").goto(curr_slide, slide);
         curr_slide = slide;

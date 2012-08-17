@@ -1,6 +1,6 @@
 function parse_markdown(markdown, options){
-    var start_tag = /^\[((list|title|img|left|right|top|bottom|center))\]/;
-    var end_tag = /^\[\/((list|title|img|left|right|top|bottom|center))\]/;
+    var start_tag = /^\[((list|title|img|left|right|top|bottom|center|middle))\]/;
+    var end_tag = /^\[\/((list|title|img|left|right|top|bottom|center|middle))\]/;
 
     var result = "";
     var project_dir = options.dir ? options.dir : "/";
@@ -33,10 +33,13 @@ function parse_markdown(markdown, options){
             result += "<div style='position:absolute;left:3%;right:3%;top:50%;bottom:3%;'>";
         }
         else if (tag_name == "center" || tag_name == "title"){
-            result += "<div style='position:absolute;left:50%;'><div style='position:relative;left:-50%;'>";
+            result += "<div style='margin:10px auto;text-align:center'>";
             if (tag_name == "title"){
                 result += "<h2>"
             }
+        }
+        else if (tag_name == "middle"){
+            result += "<div style='width:100%;height: 100%;display:table;'><div style='display:table-cell;vertical-align:middle;'>";
         }
     }
 
@@ -51,10 +54,13 @@ function parse_markdown(markdown, options){
             result += "</div>";
         }
         else if (tag_name == "center" || tag_name == "title"){
-            result += "</div></div>";
             if (tag_name == "title"){
-                result += "</h2>"
+                result += "</h2>";
             }
+            result += "</div>";
+        }
+        else if (tag_name == "middle"){
+            result += "</div></div>";
         }
         stack.pop();
     }

@@ -51,16 +51,24 @@ $(function(){
 			slides.push(this);
 		});
 	};
-	// $.fn.animate = function(direction){
-	// 	console.log("direction " + direction);
-	// };
-	$.fn.goto = function(old_slide, new_slide){
+	$.fn.goto = function(old_slide, new_slide, style){
 		console.log("jumping to " + new_slide);
+        style = typeof style !== 'undefined' ? style : "fadeIn";
 
-        $(slides[new_slide]).fadeIn("slow")
-		if (old_slide != new_slide){
-			$(slides[old_slide]).hide();
-		}
+        if (style == "fadeIn"){
+            $(slides[new_slide]).fadeIn(1250)
+    		if (old_slide != new_slide){
+    			$(slides[old_slide]).hide();
+    		}
+        }
+        else{
+            $(slides[new_slide]).css("left", '100%');
+            $(slides[new_slide]).show();
+            $(slides[new_slide]).animate({"left":"-=100%"}, "slow");
+            if (old_slide != new_slide){
+                $(slides[old_slide]).hide();
+            }
+        }
 	};
 
 });

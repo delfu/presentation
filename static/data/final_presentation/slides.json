@@ -4,16 +4,16 @@
     },
     "data":{
         "0_intro":{
-        	"summary":"[list]presentation;several projects, only going to mention a couple[/list][fail][/fail]",
-        	"slide":"[list]thing[list]presentation;several projects, only going to mention a couple[/list];level2[/list]"
+        	"summary":"",
+        	"slide":"[title]Overview[/title][middle][list]thing[list]presentation;several projects, only going to mention a couple[/list];level2[/list][/middle]"
         },
         "1_0_qos":{
         	"summary":"THIS IS S...LIDE2!!!!",
-        	"slide":"[title]Quality of Service Portal[/title]"
+        	"slide":"[middle][title]Quality of Service Portal[/title][/middle]"
         },
         "1_1_usage":{
         	"summary":"",
-        	"slide":"[right][bottom][img]img/usage_graph.png[/img][/bottom][/right]"
+        	"slide":"[title]somethign[/title][center][img]img/usage_graph.png[/img][/center]"
         },
         "1_2_usage_pi":{
         	"summary":"",
