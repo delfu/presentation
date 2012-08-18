@@ -9,19 +9,19 @@
         },
         "0_1_table_of_content":{
         	"summary":"",
-        	"slide":"[title]Overview[/title][middle][list]thing[list]presentation;several projects, only going to mention a couple[/list];level2[/list][/middle]"
+        	"slide":"[title]Overview[/title][middle][list]Quality of Service Portal[list]CDN Usage Tracking;CDN Allocations;Alert System;Prediction[/list];Windows 8 Smooth Streaming Manifest Generation[/list][/middle]"
         },
         "1_0_qos":{
-        	"summary":"THIS IS S...LIDE2!!!!",
+        	"summary":"",
         	"slide":"[middle][title]Quality of Service Portal[/title][/middle]"
         },
         "1_1_usage":{
         	"summary":"",
-        	"slide":"[title]somethign[/title][center][img]img/usage_graph.png[/img][/center]"
+        	"slide":"[title]CDN Usage Tracking[/title][center][img]img/usage_graph.png[/img][/center]"
         },
         "1_2_usage_pi":{
         	"summary":"",
-        	"slide":"[top][left][img]img/usage_pi.png[/img][/left][/top]"
+        	"slide":"[title]CDN Splitting[/title][center][img]img/usage_pi.png[/img][/center][center][img]img/allocation.png[/img][/center]"
         },
         "1_3_allocation":{
         	"summary":"",

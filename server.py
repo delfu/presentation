@@ -66,6 +66,6 @@ def application(environ, start_response):
 
 
 sio_server = SocketIOServer(
-    ('', 8080), application, 
+    ('0.0.0.0', 8080), application, 
     policy_server=False)
 sio_server.serve_forever()

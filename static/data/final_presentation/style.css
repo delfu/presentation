@@ -14,6 +14,6 @@ li {
     display: list-item;
     text-align: -webkit-match-parent;
     content: '·';
-    margin-left: -1em;
+    margin-bottom:1em;
     font-weight: 600;
 }
