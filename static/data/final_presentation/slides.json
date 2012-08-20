@@ -16,30 +16,65 @@
         	"slide":"[middle][title]Quality of Service Portal[/title][/middle]"
         },
         "1_1_usage":{
+            "summary":"",
+            "slide":"[list]Easy access to traffic data;Use the CDN reporting API;Get data as frequently as possible;Breakdown by region, transfer protocols (HTTP, RTMP);Pain points along the way (and beyond)[list]Different API’s;Different protocols;Maintaining the API’s;Reliable data?[/list][/list]"
+        },
+        "1_1_1_usage_graph":{
         	"summary":"",
         	"slide":"[title]CDN Usage Tracking[/title][center][img]img/usage_graph.png[/img][/center]"
         },
-        "1_2_usage_pi":{
+        "1_1_2_usage_pi":{
         	"summary":"",
-        	"slide":"[title]CDN Splitting[/title][center][img]img/usage_pi.png[/img][/center][center][img]img/allocation.png[/img][/center]"
+        	"slide":"[center][img]img/usage_pi.png[/img][/center]"
         },
-        "1_3_allocation":{
-        	"summary":"",
-        	"slide":"[img]img/allocation.png[/img]"
+        "1_1_3_organization":{
+            "summary":"",
+            "slide":"[title]Organization[/title][center][img]img/usage_organization.png[/img][/center]"
         },
-        "slide6":{
+        "1_2_0_allocation":{
         	"summary":"",
-        	"slide":"[img]img/allocation.png[/img]"
+        	"slide":"[middle][title]CDN Allocations[/title][/middle]"
         },
-        "slide7":{
-        	"summary":"",
-        	"slide":"[img]img/allocation.png[/img]"
+        "1_2_1_allocation":{
+            "summary":"",
+            "slide":"[list]Setup an easy way of setting allocations to each CDN;Used to be 2 json files;Cron job to check allocations every 10 minutes;Update memcache entry;Csel and deejay update their allocation based on memcached entry[/list]"
         },
-        "slide8":{
-        	"summary":"",
-        	"slide":"[img]img/allocation.png[/img]"
+        "1_2_2_organization":{
+            "summary":"",
+            "slide":"[title]Organization[/title][center][img]img/allocation_organization.png[/img][/center]"
+        },
+        "1_3_0_alert":{
+            "summary":"",
+            "slide":"[middle][title]CDN Allocations[/title][/middle]"
+        },
+        "1_3_1_alert":{
+            "summary":"",
+            "slide":"[list]Automated alert system to monitor QoS stats;Send email when abnormal data shows up;Eventually, automatically adjust allocation;Uses data from the QoS portal;Currently monitoring session count, severe rebuffering and incorrect ends;Build a 95% CI based on historical data[/list]"
+        },
+        "1_3_2_alert":{
+            "summary":"",
+            "slide":"[center][img]img/alerts.png[/img][/center]"
+        },
+        "1_3_3_organization":{
+            "summary":"",
+            "slide":"[title]Organization[/title][center][img]img/alert_organization.png[/img][/center]"
+        },
+        "2_1_1_ss":{
+            "summary":"",
+            "slide":"[middle][title]Smooth Streaming Manifest[/title][/middle]"
+        },
+        "2_1_2_ss":{
+            "summary":"",
+            "slide":"[list]ismc file describes video/audio streams;Bitrates, codecs, duration, chunks;Each bitrate has its own ismc file;Smooth Streaming requires a global ismc file that describes several bitrates;Goal: generate a global ismc based on individual ones upon request[/list]"
+        },
+        "2_1_3_organization":{
+            "summary":"",
+            "slide":"[title]Organization[/title][center][img]img/ss_organization.png[/img][/center]"
+        },
+        "3_thanks":{
+            "summary":"",
+            "slide":"[title]THANK YOU![/title][middle][center]Xinan, Greg, Baptiste[/center][/middle]"
         }
-
 
     }
 }
